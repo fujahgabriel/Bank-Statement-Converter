@@ -108,7 +108,7 @@ export default function Home() {
   };
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-black flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full mx-10">
+      <div className="bg-white p-8 shadow-md w-full mx-10">
         <h1 className="text-2xl dark:text-gray-800 font-bold mb-4">PDF Bank Statement to Excel Converter</h1>
         <h2 className="text-xl text-gray-600 mb-4">The most trusted bank statement converter</h2>
         <p className="text-sm text-gray-600 mb-4">Easily convert PDF bank statements from 1000s of banks world wide into clean Excel (XLS) format.</p>
