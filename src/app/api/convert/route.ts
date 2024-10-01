@@ -73,7 +73,7 @@ export async function POST(request: NextRequest) {
         let responseContent = completion.choices[0].message.content || ''
         //console.log(responseContent)
 
-        let chars = ['```sql', '```', '```json','json'];
+        const chars = ['```sql', '```', '```json','json'];
 
         chars.forEach(char => {
             responseContent = responseContent.replace(char, '');
