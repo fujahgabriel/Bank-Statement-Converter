@@ -55,7 +55,7 @@ export default function Home() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({transactions:transactions}),
+        body: JSON.stringify({ transactions: transactions }),
       });
 
       if (response.ok) {
@@ -83,17 +83,21 @@ export default function Home() {
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-md w-full mx-10">
         <h1 className="text-2xl dark:text-gray-800 font-bold mb-4">PDF Bank Statement to Excel Converter</h1>
+        <h2 className="text-xl text-gray-600 mb-4">The world's most trusted bank statement converter</h2>
+        <p className="text-sm text-gray-600 mb-4">Easily convert PDF bank statements from 1000s of banks world wide into clean Excel (XLS) format.</p>
+
+
         <form onSubmit={handleConvert}>
           <input
             type="file"
             accept=".pdf"
             onChange={handleFileChange}
-            className="mb-4 p-2 border dark:text-gray-800 rounded"
+            className="mb-4 p-2 border dark:text-gray-800 "
           />
           <button
             type="submit"
             disabled={loading}
-            className={`bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 ${loading ? 'opacity-50 cursor-not-allowed' : ''
+            className={`bg-black text-white px-4 py-3  hover:bg-gray-800 ${loading ? 'opacity-50 cursor-not-allowed' : ''
               }`}
           >
             {loading ? 'Converting...' : 'Convert PDF'}
@@ -129,9 +133,9 @@ export default function Home() {
             <button
               onClick={handleDownload}
               disabled={downloading}
-              className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+              className="bg-black  text-white px-4 py-2 rounded hover:bg-gray-600"
             >
-             {downloading ? 'Downloading...' : 'Download as XLSX'}
+              {downloading ? 'Downloading...' : 'Download as XLSX'}
             </button>
           </>
         )}
