@@ -6,7 +6,7 @@ const openai = new OpenAI({
 })
 export async function POST(request: NextRequest) {
     let responseContent = '';
-    
+
     try {
         const {  content } = await request.json()
         // Process the data using OpenAI
@@ -65,6 +65,6 @@ export async function POST(request: NextRequest) {
     } catch (error) {
         console.error(error);
         console.log(responseContent)
-        return NextResponse.json({ error: 'Conversion failed' }, { status: 500 });
+        return NextResponse.json({ error: 'Conversion failed', content: responseContent }, { status: 500 });
     }
 }
