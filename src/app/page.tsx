@@ -20,6 +20,7 @@ export default function Home() {
     }
   };
 
+
   const handleConvert = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!file) return;
@@ -36,13 +37,39 @@ export default function Home() {
 
       if (response.ok) {
         const data = await response.json();
-        setTransactions(data.transactions);
+        handleOpenAIAPICall(data.content);
       } else {
         alert('Conversion failed');
+        setLoading(false);
       }
     } catch (error) {
       console.error('Error:', error);
       alert('An error occurred');
+      setLoading(false);
+    }
+  };
+
+  const handleOpenAIAPICall = async (content:any) => {
+    try {
+      const response = await fetch('/api/process', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ content: content }),
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setTransactions(data.transactions);
+        setLoading(false);
+      } else {
+        alert('Conversion failed');
+        setLoading(false);
+      }
+    }catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred');
+      setLoading(false);
     } finally {
       setLoading(false);
     }
