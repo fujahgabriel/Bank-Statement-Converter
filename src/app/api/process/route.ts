@@ -6,7 +6,7 @@ const openai = new OpenAI({
 })
 export async function POST(request: NextRequest) {
     let responseContent = '';
-    let transactions = [];
+    const transactions = [];
     try {
         const { contents } = await request.json()
 
@@ -63,7 +63,7 @@ export async function POST(request: NextRequest) {
             });
 
             responseContent = responseContent.replace(/```(json|sql)?|json/g, '');
-            console.log(responseContent)
+            //console.log(responseContent)
             // Attempt to parse the JSON, with error handling
             let processedData;
             try {
