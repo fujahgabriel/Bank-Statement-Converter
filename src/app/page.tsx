@@ -107,14 +107,14 @@ export default function Home() {
         {transactions.length > 0 && (
           <>
             <div className="overflow-x-auto mb-4">
-              <table className="min-w-full dark:text-gray-800 text-center ">
+              <table className="min-w-full dark:text-gray-800  ">
                 <thead>
                   <tr>
                     <th className="px-4 py-2 border">Date</th>
                     <th className="px-4 py-2 border">Description</th>
-                    <th className="px-4 py-2 border">Debit</th>
-                    <th className="px-4 py-2 border">Credit</th>
-                    <th className="px-4 py-2 border">Balance</th>
+                    <th className="px-4 py-2 bordertext-center">Debit</th>
+                    <th className="px-4 py-2 border text-center">Credit</th>
+                    <th className="px-4 py-2 border text-center">Balance</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -122,9 +122,9 @@ export default function Home() {
                     <tr key={index}>
                       <td className="px-4 py-2 border text-xs">{transaction.date}</td>
                       <td className="px-4 py-2 border text-xs">{transaction.description}</td>
-                      <td className="px-4 py-2 border text-xs">{transaction.debit}</td>
-                      <td className="px-4 py-2 border text-xs">{transaction.credit}</td>
-                      <td className="px-4 py-2 border text-xs">{transaction.balance}</td>
+                      <td className="px-4 py-2 border text-xs text-center">{transaction.debit}</td>
+                      <td className="px-4 py-2 border text-xs text-center">{transaction.credit}</td>
+                      <td className="px-4 py-2 border text-xs text-center">{transaction.balance}</td>
                     </tr>
                   ))}
                 </tbody>

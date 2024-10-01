@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
         });
 
         //console.log('########## LOG START ##########')
-        //console.log(responseContent)
+        console.log(responseContent)
         //console.log('########## LOG END ##########')
 
         if (responseContent === '' || responseContent === null || responseContent === undefined) {
