@@ -37,7 +37,7 @@ export default function Home() {
 
       if (response.ok) {
         const data = await response.json();
-        handleOpenAIAPICall(data.content);
+        handleOpenAIAPICall(data?.contents);
       } else {
         alert('Conversion failed');
         setLoading(false);
@@ -56,7 +56,7 @@ export default function Home() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ content: content }),
+        body: JSON.stringify({ contents: content }),
       });
       if (response.ok) {
         const data = await response.json();
@@ -139,7 +139,7 @@ export default function Home() {
                   <tr>
                     <th className="px-4 py-2 border">Date</th>
                     <th className="px-4 py-2 border">Description</th>
-                    <th className="px-4 py-2 bordertext-center">Debit</th>
+                    <th className="px-4 py-2 border text-center">Debit</th>
                     <th className="px-4 py-2 border text-center">Credit</th>
                     <th className="px-4 py-2 border text-center">Balance</th>
                   </tr>

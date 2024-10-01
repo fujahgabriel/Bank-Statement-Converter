@@ -22,10 +22,7 @@ export async function POST(request: NextRequest) {
             docContent.push(doc.pageContent);  // Assuming `doc.pageContent` holds text of each page
         });
         
-        // Join the extracted text from all pages into a single string
-        const mergedContent = docContent.join(' ');
-       
-        return NextResponse.json({ content: mergedContent }, { status: 200 });
+        return NextResponse.json({ contents: docContent }, { status: 200 });
     } catch (error) {
         console.error(error);
         return NextResponse.json({ error: 'Conversion failed' }, { status: 500 });
