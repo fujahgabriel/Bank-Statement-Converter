@@ -64,7 +64,7 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ transactions: processedData?.transactions }, { status: 200 });
     } catch (error) {
         console.error(error);
-        console.log(responseContent)
+        //console.log(responseContent)
         return NextResponse.json({ error: 'Conversion failed', content: responseContent }, { status: 500 });
     }
 }
